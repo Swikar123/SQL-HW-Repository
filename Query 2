@@ -1,0 +1,4 @@
+SELECT customerName, state, country
+FROM customers
+WHERE customerName LIKE '%Collect%'
+AND country != 'USA';

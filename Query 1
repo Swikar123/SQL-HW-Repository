@@ -1,0 +1,5 @@
+--Query 1
+
+SELECT contactFirstName, contactLastName, phone, addressLine1, creditLimit
+FROM customers
+WHERE state = 'CA' AND creditLimit > 25000;

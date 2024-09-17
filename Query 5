@@ -1,0 +1,4 @@
+SELECT customers.customerName, orders.orderNumber, orders.status
+FROM customers
+JOIN orders ON customers.customerNumber = orders.customerNumber
+LIMIT 15;

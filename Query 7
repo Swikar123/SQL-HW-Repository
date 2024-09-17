@@ -1,0 +1,8 @@
+SELECT customers.customerName, customers.customerNumber, products.productName, products.productCode, SUM(orderdetails.quantityOrdered) AS total_ordered
+FROM customers
+JOIN orders ON customers.customerNumber = orders.customerNumber
+JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber
+JOIN products ON orderdetails.productCode = products.productCode
+GROUP BY customers.customerName, customers.customerNumber, products.productName, products.productCode
+HAVING total_ordered >= 10
+ORDER BY total_ordered ASC;
